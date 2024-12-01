@@ -54,4 +54,4 @@ torchrun --nnodes 1 --master_port $random_port run.py \
   --project_name $ptune_name \
   --clip_grad 100 \
   --pretrained_weight auto \
-  --task_data_config_path  data_provider/multi_task.yaml
+  --task_data_config_path  data_provider/customdata_classification.yaml
