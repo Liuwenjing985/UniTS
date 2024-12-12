@@ -532,3 +532,30 @@ task_dataset:
     enc_in: 1
     num_class: 2
     c_out: None
+  
+  CLS_radioDiantai_p130:
+    task_name: classification
+    dataset: intel
+    data: UAE
+    embed: timeF
+    root_path: ../dataset/converted_data/
+    seq_len: 1400
+    label_len: 0
+    pred_len: 0
+    enc_in: 2
+    num_class: 10
+    c_out: 0
+
+
+  CLS_radioDiantai_p130:
+  task_name: classification
+  dataset: intel
+  data: UAE
+  embed: timeF
+  root_path: ../dataset/converted_data/
+  seq_len: 1400
+  label_len: 0
+  pred_len: 0
+  enc_in: 2
+  num_class: 21
+  c_out: 0

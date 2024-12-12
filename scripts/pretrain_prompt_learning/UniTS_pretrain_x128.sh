@@ -8,7 +8,7 @@ d_model=128
 random_port=$((RANDOM % 9000 + 1000))
 
 # Pretrain
-torchrun --nnodes 1 --nproc-per-node 2 --master_port $random_port run_pretrain.py \
+torchrun --nnodes 1 --nproc-per-node 1 --master_port $random_port run_pretrain.py \
   --is_training 1 \
   --model_id $exp_name \
   --model $model_name \
@@ -54,4 +54,4 @@ torchrun --nnodes 1 --master_port $random_port run.py \
   --project_name $ptune_name \
   --clip_grad 100 \
   --pretrained_weight auto \
-  --task_data_config_path  data_provider/customdata_classification.yaml
+  --task_data_config_path  data_provider/multi_task.yaml

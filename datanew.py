@@ -3,7 +3,7 @@ import scipy.io
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
-from aeon.datasets import  write_to_tsfile
+from aeon.datasets import  write_to_ts_file
 
 # 定义输入和输出文件夹
 input_folder = 'dataset/intel'
@@ -36,13 +36,13 @@ for filename in os.listdir(input_folder):
             continue  # 跳过无法读取的文件
 data_list = np.vstack(data_list)
 
-train_data,test_data,train_labels,test_labels = train_test_split(data_list,labels,test_size=0.2,random_state = 42)
+train_data,test_data,train_labels,test_labels = train_test_split(data_list,labels,test_size=0.8,random_state = 42)
 
 
 # 保存训练集和测试集为 .ts 文件
 ts_file_path = 'dataset/converted_data/'
-write_to_tsfile(train_data,ts_file_path,train_labels,problem_name="newdata_TRAIN.ts")
-write_to_tsfile(test_data,ts_file_path,test_labels,problem_name="newdata_TEST.ts") 
+write_to_ts_file(train_data,ts_file_path,train_labels,problem_name="newdata_TRAIN.ts")
+write_to_ts_file(test_data,ts_file_path,test_labels,problem_name="newdata_TEST.ts") 
 
 
 print(f"Training data saved to {ts_file_path}")
